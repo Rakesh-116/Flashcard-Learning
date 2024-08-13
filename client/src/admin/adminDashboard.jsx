@@ -11,7 +11,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchFlashcards = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/flashcards');
+        const response = await axios.get('/api/flashcards');
         setFlashcards(response.data);
         setLoading(false);
       } catch (error) {
@@ -26,7 +26,7 @@ const AdminDashboard = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/flashcards/${id}`);
+      await axios.delete(`/api/flashcards/${id}`);
       setFlashcards(flashcards.filter(flashcard => flashcard.id !== id));
     } catch (error) {
       console.error('Error deleting flashcard:', error);

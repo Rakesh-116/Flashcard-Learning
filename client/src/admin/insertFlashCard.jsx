@@ -13,7 +13,7 @@ const Insert = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/flashcards', {
+      const response = await axios.post('/api/flashcards', {
         question,
         answer
       });

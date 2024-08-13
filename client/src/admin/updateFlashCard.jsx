@@ -12,7 +12,7 @@ const Update = () => {
   useEffect(() => {
     const fetchFlashcard = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/flashcards/${id}`);
+        const response = await axios.get(`/api/flashcards/${id}`);
         setFlashcard(response.data);
       } catch (error) {
         console.error('Error fetching flashcard:', error);
@@ -27,7 +27,7 @@ const Update = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.put(`http://localhost:5000/api/flashcards/${id}`, flashcard);
+      const response = await axios.put(`/api/flashcards/${id}`, flashcard);
 
       if (response.data.success) {
         setSuccessMessage('Flashcard updated successfully!');
